@@ -1,0 +1,11 @@
+target/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+config/application.properties
+*.log
+hs_err_pid*
+config/*.properties
+!config/application.properties.example

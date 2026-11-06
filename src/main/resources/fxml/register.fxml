@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.adaptiq.controller.RegisterController" styleClass="app-shell">
+    <left>
+        <VBox prefWidth="410" spacing="18" styleClass="brand-panel">
+            <padding><Insets top="64" right="48" bottom="64" left="48"/></padding>
+            <Label text="AdaptIQ" styleClass="brand-title"/>
+            <Label text="Create your student account and begin a more personal learning path." wrapText="true" styleClass="brand-subtitle"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Label text="Faculty accounts are provisioned by administrators." styleClass="brand-caption"/>
+        </VBox>
+    </left>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="plain-scroll">
+            <StackPane>
+                <VBox maxWidth="390" spacing="12" styleClass="login-card">
+                    <Label text="Create account" styleClass="heading"/>
+                    <Label text="Student registration only" styleClass="muted-text"/>
+                    <Label text="Full name"/><TextField fx:id="fullNameField" promptText="Your full name"/>
+                    <Label text="Email"/><TextField fx:id="emailField" promptText="you@example.com"/>
+                    <Label text="Password"/><PasswordField fx:id="passwordField" promptText="10+ characters, upper/lowercase and number"/>
+                    <Label text="Confirm password"/><PasswordField fx:id="confirmPasswordField" promptText="Repeat your password"/>
+                    <Button fx:id="registerButton" text="Create student account" maxWidth="1.7976931348623157E308" onAction="#handleRegistration" styleClass="primary-button"/>
+                    <Label fx:id="statusLabel" wrapText="true" styleClass="status-text"/>
+                    <HBox spacing="5"><Label text="Already registered?" styleClass="muted-text"/><Hyperlink text="Sign in" onAction="#showLogin"/></HBox>
+                </VBox>
+            </StackPane>
+        </ScrollPane>
+    </center>
+</BorderPane>

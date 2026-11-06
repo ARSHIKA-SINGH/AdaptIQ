@@ -1,0 +1,40 @@
+.app-shell { -fx-background-color: #F8FAFC; -fx-font-family: "Segoe UI", Arial, sans-serif; }
+.brand-panel { -fx-background-color: linear-gradient(to bottom right, #0F172A, #1D4ED8); }
+.brand-title { -fx-text-fill: white; -fx-font-size: 42px; -fx-font-weight: 800; }
+.brand-subtitle { -fx-text-fill: #DBEAFE; -fx-font-size: 19px; -fx-line-spacing: 5px; }
+.brand-caption { -fx-text-fill: #BFDBFE; -fx-font-size: 14px; }
+.login-card { -fx-background-color: white; -fx-background-radius: 16; -fx-padding: 36; -fx-effect: dropshadow(gaussian, rgba(15,23,42,.12), 24, 0, 0, 8); }
+.heading { -fx-font-size: 28px; -fx-font-weight: 700; -fx-text-fill: #0F172A; }
+.muted-text { -fx-text-fill: #64748B; }
+.status-text { -fx-text-fill: #2563EB; }
+.text-field, .password-field { -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CBD5E1; -fx-padding: 10 12; }
+.primary-button { -fx-background-color: #2563EB; -fx-text-fill: white; -fx-font-weight: 700; -fx-background-radius: 8; -fx-padding: 11 16; -fx-cursor: hand; }
+.primary-button:hover { -fx-background-color: #1D4ED8; }
+.plain-scroll { -fx-background: #F8FAFC; -fx-background-color: transparent; -fx-border-color: transparent; }
+.dashboard-shell { -fx-background-color: #F8FAFC; -fx-font-family: "Segoe UI", Arial, sans-serif; }
+.sidebar { -fx-background-color: #0F172A; }
+.sidebar-title { -fx-text-fill: white; -fx-font-size: 25px; -fx-font-weight: 800; }
+.sidebar-caption { -fx-text-fill: #94A3B8; -fx-font-size: 10px; -fx-font-weight: 700; -fx-letter-spacing: 1px; }
+.sidebar-button { -fx-background-color: transparent; -fx-text-fill: #CBD5E1; -fx-alignment: CENTER_LEFT; -fx-padding: 10 12; -fx-cursor: hand; }
+.sidebar-button:hover { -fx-background-color: #1E293B; -fx-text-fill: white; }
+.dashboard-content { -fx-background-color: #F8FAFC; }
+.page-title { -fx-font-size: 27px; -fx-font-weight: 750; -fx-text-fill: #0F172A; }
+.profile-name { -fx-font-weight: 650; -fx-text-fill: #1E293B; }
+.outline-button { -fx-background-color: white; -fx-border-color: #CBD5E1; -fx-border-radius: 7; -fx-background-radius: 7; -fx-text-fill: #2563EB; -fx-font-weight: 650; -fx-cursor: hand; }
+.metric-card, .content-card { -fx-background-color: white; -fx-background-radius: 12; -fx-padding: 18; -fx-effect: dropshadow(gaussian, rgba(15,23,42,.06), 10, 0, 0, 2); }
+.metric-label { -fx-text-fill: #64748B; -fx-font-size: 10px; -fx-font-weight: 700; }
+.metric-value { -fx-text-fill: #0F172A; -fx-font-size: 27px; -fx-font-weight: 750; }
+.section-title { -fx-text-fill: #1E293B; -fx-font-size: 15px; -fx-font-weight: 700; }
+.clean-list { -fx-background-color: transparent; -fx-border-color: transparent; }
+.clean-list .list-cell { -fx-background-color: transparent; -fx-border-color: transparent transparent #E2E8F0 transparent; -fx-padding: 10 4; -fx-text-fill: #334155; }
+.toolbar { -fx-background-color: white; -fx-border-color: transparent transparent #E2E8F0 transparent; }
+.editor-panel { -fx-background-color: white; }
+.danger-button { -fx-background-color: #DC2626; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: 650; -fx-cursor: hand; }
+.exam-shell { -fx-background-color: #F1F5F9; -fx-font-family: "Segoe UI", Arial, sans-serif; }
+.exam-header { -fx-background-color: #0F172A; }
+.exam-title { -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: 700; }
+.exam-time-label { -fx-text-fill: #CBD5E1; }
+.exam-timer { -fx-text-fill: #FCA5A5; -fx-font-size: 20px; -fx-font-weight: 800; }
+.exam-card { -fx-background-color: white; -fx-background-radius: 14; -fx-effect: dropshadow(gaussian, rgba(15,23,42,.10), 20, 0, 0, 4); }
+.exam-question { -fx-font-size: 20px; -fx-font-weight: 650; -fx-text-fill: #0F172A; }
+.answer-option { -fx-padding: 12; -fx-background-color: #F8FAFC; -fx-background-radius: 8; -fx-border-color: #E2E8F0; -fx-border-radius: 8; }

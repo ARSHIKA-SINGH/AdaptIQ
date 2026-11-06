@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.adaptiq.controller.LoginController" styleClass="app-shell">
+    <left>
+        <VBox prefWidth="410" spacing="18" styleClass="brand-panel">
+            <padding><Insets top="64" right="48" bottom="64" left="48"/></padding>
+            <Label text="AdaptIQ" styleClass="brand-title"/>
+            <Label text="Adaptive Learning &amp; Intelligent Examination Platform" wrapText="true" styleClass="brand-subtitle"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Label text="Learn with clarity. Assess with confidence." styleClass="brand-caption"/>
+        </VBox>
+    </left>
+    <center>
+        <StackPane>
+            <VBox maxWidth="390" spacing="14" styleClass="login-card">
+                <Label text="Welcome back" styleClass="heading"/>
+                <Label text="Sign in to continue your learning journey." styleClass="muted-text"/>
+                <Label text="Email"/>
+                <TextField fx:id="emailField" promptText="you@example.com"/>
+                <Label text="Password"/>
+                <PasswordField fx:id="passwordField" promptText="Enter your password"/>
+                <CheckBox text="Remember my email"/>
+                <Button fx:id="loginButton" text="Sign in" maxWidth="1.7976931348623157E308" onAction="#handleLogin" styleClass="primary-button"/>
+                <Label fx:id="statusLabel" wrapText="true" styleClass="status-text"/>
+                <Separator/>
+                <HBox spacing="5"><Label text="New student?" styleClass="muted-text"/><Hyperlink text="Create an account" onAction="#showRegistration"/></HBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

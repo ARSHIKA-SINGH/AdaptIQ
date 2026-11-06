@@ -1,0 +1,4 @@
+# Copy to config/application.properties and supply local credentials. Never commit that file.
+db.url=jdbc:mysql://localhost:3306/adaptiq_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+db.username=adaptiq_user
+db.password=replace-with-a-local-secret
