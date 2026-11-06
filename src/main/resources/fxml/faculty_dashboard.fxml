@@ -3,6 +3,37 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.adaptiq.controller.FacultyController" styleClass="dashboard-shell">
-    <left><VBox prefWidth="220" spacing="12" styleClass="sidebar"><padding><Insets top="28" right="18" bottom="28" left="18"/></padding><Label text="AdaptIQ" styleClass="sidebar-title"/><Label text="FACULTY PORTAL" styleClass="sidebar-caption"/><Region VBox.vgrow="ALWAYS"/><Button text="Question bank" onAction="#showQuestionBank" maxWidth="1.7976931348623157E308" styleClass="sidebar-button"/><Button text="Create examination" onAction="#showExamBuilder" maxWidth="1.7976931348623157E308" styleClass="sidebar-button"/><Button text="Refresh dashboard" onAction="#refresh" maxWidth="1.7976931348623157E308" styleClass="sidebar-button"/><Button text="Sign out" onAction="#logout" maxWidth="1.7976931348623157E308" styleClass="sidebar-button"/></VBox></left>
-    <center><VBox spacing="22" styleClass="dashboard-content"><padding><Insets top="28" right="34" bottom="28" left="34"/></padding><HBox alignment="CENTER_LEFT"><VBox spacing="4"><Label text="Faculty dashboard" styleClass="page-title"/><Label text="A live overview of examinations you manage" styleClass="muted-text"/></VBox><Region HBox.hgrow="ALWAYS"/><VBox alignment="CENTER_RIGHT" spacing="4"><Label fx:id="userNameLabel" styleClass="profile-name"/><Button fx:id="refreshButton" text="Refresh" onAction="#refresh" styleClass="outline-button"/></VBox></HBox><HBox spacing="16"><VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="TOTAL EXAMS" styleClass="metric-label"/><Label fx:id="examsLabel" text="—" styleClass="metric-value"/></VBox><VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="PUBLISHED" styleClass="metric-label"/><Label fx:id="publishedLabel" text="—" styleClass="metric-value"/></VBox><VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="STUDENT ATTEMPTS" styleClass="metric-label"/><Label fx:id="attemptsLabel" text="—" styleClass="metric-value"/></VBox><VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="AVERAGE RESULT" styleClass="metric-label"/><Label fx:id="averageLabel" text="—" styleClass="metric-value"/></VBox></HBox><VBox styleClass="content-card" spacing="10"><Label text="Phase 4 will add question-bank and examination creation controls." styleClass="section-title"/><Label text="These statistics already reflect actual examinations and submitted attempts in MySQL." styleClass="muted-text"/></VBox><Label fx:id="statusLabel" styleClass="status-text" wrapText="true"/></VBox></center>
+  <left>
+    <VBox prefWidth="244" spacing="4" styleClass="sidebar">
+      <HBox spacing="10" alignment="CENTER_LEFT" styleClass="sidebar-brand"><Label text="A" styleClass="logo-mark"/><VBox spacing="2"><Label text="AdaptIQ" styleClass="sidebar-title"/><Label text="FACULTY WORKSPACE" styleClass="sidebar-caption"/></VBox></HBox>
+      <Label text="ASSESSMENT" styleClass="sidebar-section"/>
+      <Button text="Overview" maxWidth="1.7976931348623157E308" styleClass="sidebar-button-active"/>
+      <Button text="Question bank" onAction="#showQuestionBank" maxWidth="1.7976931348623157E308" styleClass="sidebar-button"/>
+      <Button text="Create examination" onAction="#showExamBuilder" maxWidth="1.7976931348623157E308" styleClass="sidebar-button"/>
+      <Label text="WORKSPACE" styleClass="sidebar-section"/>
+      <Button text="Refresh live data" onAction="#refresh" maxWidth="1.7976931348623157E308" styleClass="sidebar-button"/>
+      <Region VBox.vgrow="ALWAYS"/>
+      <Button text="Sign out" onAction="#logout" maxWidth="1.7976931348623157E308" styleClass="signout-button"/>
+    </VBox>
+  </left>
+  <center>
+    <ScrollPane fitToWidth="true" styleClass="plain-scroll"><VBox spacing="20" styleClass="dashboard-content">
+      <HBox alignment="CENTER_LEFT" styleClass="topbar">
+        <VBox spacing="4"><Label text="FACULTY WORKSPACE" styleClass="page-kicker"/><Label text="Assessment overview" styleClass="page-title"/><Label text="Monitor the examinations and learner attempts you manage." styleClass="section-caption"/></VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <HBox spacing="10" alignment="CENTER_RIGHT"><Button fx:id="refreshButton" text="Refresh" onAction="#refresh" styleClass="outline-button"/><HBox spacing="8" alignment="CENTER_LEFT" styleClass="profile-chip"><Label text="F" styleClass="avatar"/><Label fx:id="userNameLabel" styleClass="profile-name"/></HBox></HBox>
+      </HBox>
+      <HBox spacing="14">
+        <VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="TOTAL EXAMS" styleClass="metric-label"/><Label fx:id="examsLabel" text="--" styleClass="metric-value"/><Label text="Created assessments" styleClass="metric-accent"/></VBox>
+        <VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="PUBLISHED" styleClass="metric-label"/><Label fx:id="publishedLabel" text="--" styleClass="metric-value"/><Label text="Available to learners" styleClass="metric-accent"/></VBox>
+        <VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="ATTEMPTS" styleClass="metric-label"/><Label fx:id="attemptsLabel" text="--" styleClass="metric-value"/><Label text="Submitted responses" styleClass="metric-accent"/></VBox>
+        <VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="AVERAGE RESULT" styleClass="metric-label"/><Label fx:id="averageLabel" text="--" styleClass="metric-value"/><Label text="Across submitted attempts" styleClass="metric-accent"/></VBox>
+      </HBox>
+      <HBox spacing="16" VBox.vgrow="ALWAYS">
+        <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="content-card"><Label text="Build high-quality assessments" styleClass="section-title"/><Label text="Manage validated MCQs, organize them by subject and topic, then publish a fixed-question examination." wrapText="true" styleClass="section-caption"/><Region VBox.vgrow="ALWAYS"/><HBox spacing="8"><Button text="Question bank" onAction="#showQuestionBank" styleClass="outline-button"/><Button text="Create examination" onAction="#showExamBuilder" styleClass="primary-button"/></HBox></VBox>
+        <VBox spacing="8" HBox.hgrow="ALWAYS" styleClass="info-card"><Label text="Live performance signals" styleClass="info-card-title"/><Label text="The metrics above are queried from your saved examinations and completed learner attempts. Use refresh to request current data." wrapText="true" styleClass="info-card-text"/></VBox>
+      </HBox>
+      <Label fx:id="statusLabel" styleClass="status-text" wrapText="true"/>
+    </VBox></ScrollPane>
+  </center>
 </BorderPane>

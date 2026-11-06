@@ -3,6 +3,36 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.adaptiq.controller.AdminController" styleClass="dashboard-shell">
-    <left><VBox prefWidth="220" spacing="12" styleClass="sidebar"><padding><Insets top="28" right="18" bottom="28" left="18"/></padding><Label text="AdaptIQ" styleClass="sidebar-title"/><Label text="ADMINISTRATION" styleClass="sidebar-caption"/><Region VBox.vgrow="ALWAYS"/><Button text="Manage catalogue" onAction="#showCatalog" maxWidth="1.7976931348623157E308" styleClass="sidebar-button"/><Button text="Refresh dashboard" onAction="#refresh" maxWidth="1.7976931348623157E308" styleClass="sidebar-button"/><Button text="Sign out" onAction="#logout" maxWidth="1.7976931348623157E308" styleClass="sidebar-button"/></VBox></left>
-    <center><VBox spacing="22" styleClass="dashboard-content"><padding><Insets top="28" right="34" bottom="28" left="34"/></padding><HBox alignment="CENTER_LEFT"><VBox spacing="4"><Label text="Administration dashboard" styleClass="page-title"/><Label text="A live overview of platform records" styleClass="muted-text"/></VBox><Region HBox.hgrow="ALWAYS"/><VBox alignment="CENTER_RIGHT" spacing="4"><Label fx:id="userNameLabel" styleClass="profile-name"/><Button fx:id="refreshButton" text="Refresh" onAction="#refresh" styleClass="outline-button"/></VBox></HBox><HBox spacing="16"><VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="STUDENTS" styleClass="metric-label"/><Label fx:id="studentsLabel" text="—" styleClass="metric-value"/></VBox><VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="FACULTY" styleClass="metric-label"/><Label fx:id="facultyLabel" text="—" styleClass="metric-value"/></VBox><VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="EXAMINATIONS" styleClass="metric-label"/><Label fx:id="examsLabel" text="—" styleClass="metric-value"/></VBox><VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="QUESTIONS" styleClass="metric-label"/><Label fx:id="questionsLabel" text="—" styleClass="metric-value"/></VBox></HBox><VBox styleClass="content-card" spacing="10"><Label text="Phase 4 will add subject, topic, and account-management operations." styleClass="section-title"/><Label text="These counts are retrieved from the MySQL database and are not sample values." styleClass="muted-text"/></VBox><Label fx:id="statusLabel" styleClass="status-text" wrapText="true"/></VBox></center>
+  <left>
+    <VBox prefWidth="244" spacing="4" styleClass="sidebar">
+      <HBox spacing="10" alignment="CENTER_LEFT" styleClass="sidebar-brand"><Label text="A" styleClass="logo-mark"/><VBox spacing="2"><Label text="AdaptIQ" styleClass="sidebar-title"/><Label text="ADMIN CONSOLE" styleClass="sidebar-caption"/></VBox></HBox>
+      <Label text="WORKSPACE" styleClass="sidebar-section"/>
+      <Button text="Overview" maxWidth="1.7976931348623157E308" styleClass="sidebar-button-active"/>
+      <Button text="Catalogue management" onAction="#showCatalog" maxWidth="1.7976931348623157E308" styleClass="sidebar-button"/>
+      <Label text="SYSTEM" styleClass="sidebar-section"/>
+      <Button text="Refresh live data" onAction="#refresh" maxWidth="1.7976931348623157E308" styleClass="sidebar-button"/>
+      <Region VBox.vgrow="ALWAYS"/>
+      <Button text="Sign out" onAction="#logout" maxWidth="1.7976931348623157E308" styleClass="signout-button"/>
+    </VBox>
+  </left>
+  <center>
+    <ScrollPane fitToWidth="true" styleClass="plain-scroll"><VBox spacing="20" styleClass="dashboard-content">
+      <HBox alignment="CENTER_LEFT" styleClass="topbar">
+        <VBox spacing="4"><Label text="ADMINISTRATION" styleClass="page-kicker"/><Label text="System overview" styleClass="page-title"/><Label text="Live account, assessment, and content activity." styleClass="section-caption"/></VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <HBox spacing="10" alignment="CENTER_RIGHT"><Button fx:id="refreshButton" text="Refresh" onAction="#refresh" styleClass="outline-button"/><HBox spacing="8" alignment="CENTER_LEFT" styleClass="profile-chip"><Label text="A" styleClass="avatar"/><Label fx:id="userNameLabel" styleClass="profile-name"/></HBox></HBox>
+      </HBox>
+      <HBox spacing="14">
+        <VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="TOTAL STUDENTS" styleClass="metric-label"/><Label fx:id="studentsLabel" text="--" styleClass="metric-value"/><Label text="Registered learners" styleClass="metric-accent"/></VBox>
+        <VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="FACULTY MEMBERS" styleClass="metric-label"/><Label fx:id="facultyLabel" text="--" styleClass="metric-value"/><Label text="Teaching accounts" styleClass="metric-accent"/></VBox>
+        <VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="EXAMINATIONS" styleClass="metric-label"/><Label fx:id="examsLabel" text="--" styleClass="metric-value"/><Label text="Assessment catalogue" styleClass="metric-accent"/></VBox>
+        <VBox HBox.hgrow="ALWAYS" styleClass="metric-card"><Label text="QUESTION BANK" styleClass="metric-label"/><Label fx:id="questionsLabel" text="--" styleClass="metric-value"/><Label text="Available questions" styleClass="metric-accent"/></VBox>
+      </HBox>
+      <HBox spacing="16" VBox.vgrow="ALWAYS">
+        <VBox spacing="8" HBox.hgrow="ALWAYS" styleClass="content-card"><Label text="Manage academic structure" styleClass="section-title"/><Label text="Create and maintain the subjects and topics that organize every examination question." wrapText="true" styleClass="section-caption"/><Region VBox.vgrow="ALWAYS"/><Button text="Open catalogue" onAction="#showCatalog" styleClass="primary-button"/></VBox>
+        <VBox spacing="8" HBox.hgrow="ALWAYS" styleClass="info-card"><Label text="Data integrity" styleClass="info-card-title"/><Label text="All displayed totals come directly from persisted MySQL records. Refresh after administrative changes to retrieve the latest figures." wrapText="true" styleClass="info-card-text"/></VBox>
+      </HBox>
+      <Label fx:id="statusLabel" styleClass="status-text" wrapText="true"/>
+    </VBox></ScrollPane>
+  </center>
 </BorderPane>
