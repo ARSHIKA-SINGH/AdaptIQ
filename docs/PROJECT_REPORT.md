@@ -910,6 +910,7 @@ extended into a browser-accessible learning and assessment system.
 
   `mvn javafx:run`                    Runs the JavaFX application using
                                       the configured plugin.
+                                      
   -----------------------------------------------------------------------
 
 ## Appendix B: Important Project Files
